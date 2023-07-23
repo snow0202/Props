@@ -1,0 +1,36 @@
+.back {
+    background-image: url('../img/v4zj3vzlqusjzumnl9xl.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(100px + 2vmin);
+    color: #87cefa;
+}
+
+.container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .container.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 20px;
+  }
+  
