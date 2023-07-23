@@ -1,25 +1,31 @@
 import React from 'react';
 import './App.css';
 import { A } from './Props/A'
+import { Drop } from './Doropdown/Drop'
 
 export const App = () => {
+
+  const arr: Array<{ value: string; name: string }> = [
+    { value: '1', name: 'Selection1' },
+    { value: '2', name: 'Selection2' },
+    { value: '3', name: 'Selection3' },
+    { value: '4', name: 'Selection4' }
+  ];
+
+  const string: string = "Label";
+  const string2: string = "input";
+
   return (
     <div className="App">
       <header className="App-header">
       <div className="App">
         <A />
+        <Drop 
+          optionList={arr} 
+          placeholder={string2}
+        />
+
       </div>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
