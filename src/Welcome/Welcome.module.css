@@ -1,5 +1,5 @@
 .back {
-    background-image: url('../img/v4zj3vzlqusjzumnl9xl.avif');
+    background-image: url('../img/desktop-wallpaper-2-cute-anime-girl-drinking-boba-anime-girl-cute-pfp.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 1000px;
@@ -23,14 +23,15 @@
   }
   
   .title {
+    position: relative;
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: #7fffd4;
   }
   
   .description {
+    position: relative;
     font-size: 1.5rem;
-    color: #666;
-    margin-top: 20px;
+    color: #7fffd4;
   }
   
