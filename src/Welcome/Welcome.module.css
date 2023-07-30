@@ -2,7 +2,7 @@
     background-image: url('../img/desktop-wallpaper-2-cute-anime-girl-drinking-boba-anime-girl-cute-pfp.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 1000px;
+    background-size: 85%;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -26,12 +26,17 @@
     position: relative;
     font-size: 3rem;
     font-weight: bold;
-    color: #7fffd4;
+    color: #1abc9c;
   }
   
   .description {
     position: relative;
     font-size: 1.5rem;
-    color: #7fffd4;
+    color: #1abc9c;
   }
   
+
+  .menu {
+    position: absolute;
+    bottom: 10px;
+  }

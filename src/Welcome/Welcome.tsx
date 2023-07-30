@@ -13,13 +13,17 @@ export const Welcome: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.back}>
-      <div className={`${styles.container} ${isLoaded ? styles.loaded : ""}`}>
-        <h1 className={styles.title}>Welcome to Our Website</h1>
-        <p className={styles.description}>We offer amazing animations!</p>
+    <>
+      <div className={styles.back}>
+        <div className={`${styles.container} ${isLoaded ? styles.loaded : ""}`}>
+          <h1 className={styles.title}>Welcome to Our Website</h1>
+          <p className={styles.description}>We offer amazing animations!</p>
+        </div>
+        <div className={styles.menu}>
+        <Menu />
       </div>
-      <Menu />
-    </div>
+      </div>
+    </>
   );
 };
 
