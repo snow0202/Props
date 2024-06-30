@@ -4,12 +4,17 @@ import styles from './Button.module.css';
 
 interface ButtonProps {
     name?: string;
+    onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     const navigate = useNavigate();
     const handleLogin = () => {
-        navigate('/Welcome');
+        if (props.onClick) {
+            props.onClick();
+        } else {
+            navigate('/Welcome');
+        }
     };
     return (
         <>

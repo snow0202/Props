@@ -12,6 +12,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.4",
     "downshift": "^8.0.0",
+    "framer-motion": "^11.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
@@ -24,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,5 +45,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@types/testing-library__react": "^10.2.0",
+    "babel-jest": "^29.6.2",
+    "jest": "^27.5.1",
+    "ts-node": "^10.9.1"
   }
 }
