@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
+import { WELCOM_URL } from '../../utils/constants';
 import styles from './Button.module.css';
 
 interface ButtonProps {
@@ -13,7 +14,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         if (props.onClick) {
             props.onClick();
         } else {
-            navigate('/Welcome');
+            navigate(WELCOM_URL);
         }
     };
     return (
