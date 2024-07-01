@@ -20,8 +20,4 @@ export const BUTTON_NAME: string = 'Enter';
 
 
 /* Welcome */
-export const LOADING_STRING_TIME: number = 2600;
-
-export const WELCOM_TITLE: string = 'Welcome to Our Website';
-
-export const WELCOM_STRING: string = 'We offer amazing animations!';
+export const SEND_STRING: string = '問い合わせる';

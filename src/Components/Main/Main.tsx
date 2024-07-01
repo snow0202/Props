@@ -15,7 +15,7 @@ import { Loading } from '../../utils/Loading/Loading';
 
 export const Main: React.FC = () => {
     const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleClick = () => {
         setIsLoading(true);

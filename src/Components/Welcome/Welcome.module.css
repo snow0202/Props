@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 .back {
   background-image: url('../../img/desktop-wallpaper-2-cute-anime-girl-drinking-boba-anime-girl-cute-pfp.jpg');
   background-position: center;
@@ -11,32 +13,62 @@
   color: #87cefa;
 }
 
-.container {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-
-.container.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.title {
-  position: relative;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #1abc9c;
-}
-
-.description {
-  position: relative;
-  font-size: 1.5rem;
-  color: #1abc9c;
-}
-
-
 .menu {
   position: absolute;
-  bottom: 10px;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  max-width: 420px;
+  margin: 50px auto;
+}
+
+.feedbackInput {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.feedbackInput:focus {
+  border: 2px solid #CC4949;
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+.submitButton {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: #CC6666;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+
+.submitButton:hover {
+  background: #CC4949;
 }

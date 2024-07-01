@@ -1,25 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Welcome.module.css";
 import { motion } from 'framer-motion';
-import { Menu } from "./Menu/Menu";
-import { LOADING_STRING_TIME, 
-  WELCOM_TITLE, 
-  WELCOM_STRING,
+import {
   INITIAL_OPACITY,
   ANIMATE_OPACITY,
   TRANSITION_DURATION,
-  TRANSITION_DELAY
+  TRANSITION_DELAY,
+  SEND_STRING
 } from '../../utils/constants';
+import axios from 'axios';
 
 export const Welcome: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  useEffect(() => {
-    // ページがロードされた後、2.6秒後に要素を表示させる
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, LOADING_STRING_TIME);
-  }, []);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:3001/send-email', formData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <motion.div
@@ -27,15 +39,37 @@ export const Welcome: React.FC = () => {
       initial={{ opacity: INITIAL_OPACITY }}
       animate={{ opacity: ANIMATE_OPACITY }}
       transition={{ duration: TRANSITION_DURATION, delay: TRANSITION_DELAY }}>
-      <div className={`${styles.container} ${isLoaded ? styles.loaded : ""}`}>
-        <h1 className={styles.title}>{WELCOM_TITLE}</h1>
-        <p className={styles.description}>{WELCOM_STRING}</p>
-      </div>
       <div className={styles.menu}>
-        <Menu />
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            name="name"
+            type="text"
+            className={styles.feedbackInput}
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            className={styles.feedbackInput}
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            className={styles.feedbackInput}
+            placeholder="Comment"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <input type="submit" value={SEND_STRING} className={styles.submitButton} />
+        </form>
       </div>
     </motion.div>
   );
 };
-
-
