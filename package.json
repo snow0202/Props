@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "server": "node server.js"
+    "server": "node server/server.js"
   },
   "eslintConfig": {
     "extends": [

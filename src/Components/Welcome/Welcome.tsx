@@ -10,8 +10,14 @@ import {
 } from '../../utils/constants';
 import axios from 'axios';
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export const Welcome: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
